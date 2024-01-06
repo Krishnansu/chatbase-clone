@@ -90,19 +90,25 @@ const Sidebar = () => {
                 <span className='mx-3 text-gray-500 font-medium'>Notion</span>
                 </button>
             </div>
-            <div className='flex flex-col border border-gray-300 w-[40%] mt-14'>
-                {/* <Files /> */}
-                <Text />
-                {/* <Website />
-                <Qna />
+            <div className='flex flex-col border border-gray-300 w-[50%] mt-14'>
+                {/* <Files />
+                <Text /> */}
+                <Website />
+                {/* <Qna />
                 <Notion /> */}
             </div>
             <div className='flex flex-col justify-around border border-gray-300 mt-14 w-[20%] p-3 h-[80%]'>
                 <h1 className='font-semibold text-lg flex flex-row justify-center'>Sources</h1>
                 <div>
-                <p className='font-normal text-gray-500 mb-4'>7 Links (4,549 detected chars)</p>
-                <p className="font-medium"><span>Total detected characters</span></p>
-                <p className="flex flex-row justify-center"><span className='font-semibold text-gray-800'>4549</span><span className='font-normal text-gray-400'>/ 400,000 limit</span></p>
+                    <div className='my-4'>
+                        <p className='font-normal text-gray-500 '>1 File (9,301 chars)</p>
+                        <p className='font-normal text-gray-500 '>4 text input chars</p>
+                        <p className='font-normal text-gray-500 '>7 Links (4,549 detected chars)</p>
+                        <p className='font-normal text-gray-500 '>1 Q&A (0 chars)</p>
+                    </div>
+                    
+                    <p className="font-medium"><span>Total detected characters</span></p>
+                    <p className="flex flex-row justify-center"><span className='font-semibold text-gray-800'>4549</span><span className='font-normal text-gray-400'>/ 400,000 limit</span></p>
                 </div>
                 <button className='bg-black p-1 text-white font-medium text-base rounded-md w-full mt-4'>Train Chatbot</button>
             </div>
