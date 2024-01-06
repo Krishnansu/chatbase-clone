@@ -17,6 +17,7 @@ import notionGray from "./notion-gray.png";
 import notionPurple from "./notion-purple.png";
 
 import uploadIcon from "./upload.png";
+import trash from "./trash.png";
 
 export{
     chatbaseLogo,
@@ -31,5 +32,6 @@ export{
     qnaPurple,
     notionGray,
     notionPurple,
-    uploadIcon
+    uploadIcon,
+    trash
 };

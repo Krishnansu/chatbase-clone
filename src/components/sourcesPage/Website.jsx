@@ -1,4 +1,5 @@
 import React from 'react';
+import { trash } from '../../assets';
 
 const Website = () => {
   return (
@@ -25,7 +26,7 @@ const Website = () => {
         <div className='flex flex-row-reverse mb-4'>
           <button className="text-red-500 border border-red-500 p-2 rounded-lg font-medium hover:bg-red-100">Delete all</button>
         </div>
-        <div className='flex flex-row justify-evenly items-center'>
+        <div className='flex flex-row justify-evenly items-center my-2'>
             <div className="group relative w-[20%]" >
               <button className='items-center justify-between rounded-md bg-green-50 px-2 py-1 text-sm font-medium text-green-700 ring-1 ring-inset ring-green-600/20'>Trained &#9432;</button>
               <span
@@ -35,8 +36,9 @@ const Website = () => {
             </div>
             <input type="url" defaultValue="https://organ-hub-dehc.onrender.com/" className='border border-gray-300 rounded-md w-[60%] text-base'></input>
             <p className='font-normal text-base text-gray-500'>5123</p>
-            <button>Delete</button>
+            <button><img src={trash} alt="trash" className='h-4 w-4' /></button>
         </div>
+        
       
       </div>
     </>
