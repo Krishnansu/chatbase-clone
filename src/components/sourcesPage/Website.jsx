@@ -6,7 +6,7 @@ const Website = () => {
   return (
     <>
       <h1 className='p-3 font-semibold text-xl'>Website</h1>
-      <div className='border border-gray-300 p-4'>
+      <div className='border-t border-gray-300 p-4'>
         <h1 className='font-medium text-base text-gray-700'>Crawl</h1>
         <div className='flex flex-row my-3 justify-evenly'>
           <input className='border border-gray-300 rounded-md p-2  w-[60%]' placeholder='https://www.example.com'></input>

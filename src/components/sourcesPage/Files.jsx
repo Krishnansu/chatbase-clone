@@ -16,7 +16,7 @@ const Files = () => {
     <>
 
     <h1 className='p-3 font-semibold text-xl'>Files</h1>
-    <div className='border border-gray-300'>
+    <div className='border-t border-gray-300'>
       <FileUploader
         multiple={true}
         handleChange={handleChange}

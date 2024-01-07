@@ -15,6 +15,7 @@ import qnaPurple from "./qna-purple.png";
 
 import notionGray from "./notion-gray.png";
 import notionPurple from "./notion-purple.png";
+import notion from "./notion.png";
 
 import uploadIcon from "./upload.png";
 import trash from "./trash.png";
@@ -32,6 +33,7 @@ export{
     qnaPurple,
     notionGray,
     notionPurple,
+    notion,
     uploadIcon,
     trash
 };

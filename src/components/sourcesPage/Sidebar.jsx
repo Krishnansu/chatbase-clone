@@ -6,6 +6,8 @@ import {Files,Text,Website,Qna,Notion} from "../sourcesPage";
 
 const Sidebar = () => {
 
+    // const [color, setColor] = useState(true);
+
     const [option, setOption] = useState({
         "files": true,
         "text": false,
@@ -25,6 +27,7 @@ const Sidebar = () => {
             qna: false,
             notion: false
           });
+
         } else if (data === "text") {
           setOption({
             ...option,
@@ -69,31 +72,111 @@ const Sidebar = () => {
         <div className='flex flex-row justify-evenly mt-8 mx-10'>
             <div className='flex flex-col w-[10%]'>
                 <h1 className='text-black text-3xl font-bold mb-3'>Sources</h1>
+
                 <button onClick={() => clickHandler("files")} className='flex flex-row my-2 items-center'>
-                <img src={filesGray} alt='icon' className='h-5 w-5'/>
-                <span className='mx-3 text-gray-500 font-medium'>Files</span>
+                {option.files ?
+                 <>
+                    <img src={filesPurple} alt='icon' className='h-5 w-5'/>
+                    <span className='mx-3 text-purple-600 font-medium'>Files</span>
+                 </> 
+                 : 
+                 <>
+                    <img src={filesGray} alt='icon' className='h-5 w-5'/>
+                    <span className='mx-3 text-gray-500 font-medium'>Files</span>
+                 </>
+                 }
+                
                 </button>
+
                 <button onClick={() => clickHandler("text")} className='flex flex-row my-2 items-center'>
+                  {option.text ?
+                    <>
+                      <img src={textPurple} alt='icon' className='h-5 w-5'/>
+                      <span className='mx-3 text-purple-600 font-medium'>Text</span>
+                    </> 
+                    : 
+                    <>
+                      <img src={textGray} alt='icon' className='h-5 w-5'/>
+                      <span className='mx-3 text-gray-500 font-medium'>Text</span>
+                    </>
+                  }
+                </button>
+
+                <button onClick={() => clickHandler("website")} className='flex flex-row my-2 items-center'>
+                  {option.website ?
+                    <>
+                      <img src={websitePurple} alt='icon' className='h-5 w-5'/>
+                      <span className='mx-3 text-purple-600 font-medium'>Website</span>
+                    </> 
+                    : 
+                    <>
+                      <img src={websiteGray} alt='icon' className='h-5 w-5'/>
+                      <span className='mx-3 text-gray-500 font-medium'>Website</span>
+                    </>
+                  }
+                </button>
+
+                <button onClick={() => clickHandler("qna")} className='flex flex-row my-2 items-center'>
+                  {option.qna ?
+                    <>
+                      <img src={qnaPurple} alt='icon' className='h-5 w-5'/>
+                      <span className='mx-3 text-purple-600 font-medium'>Q&A</span>
+                    </> 
+                    : 
+                    <>
+                      <img src={qnaGray} alt='icon' className='h-5 w-5'/>
+                      <span className='mx-3 text-gray-500 font-medium'>Q&A</span>
+                    </>
+                  }
+                </button>
+
+                <button onClick={() => clickHandler("notion")} className='flex flex-row my-2 items-center'>
+                  {option.notion ?
+                    <>
+                      <img src={notionPurple} alt='icon' className='h-5 w-5'/>
+                      <span className='mx-3 text-purple-600 font-medium'>Notion</span>
+                    </> 
+                    : 
+                    <>
+                      <img src={notionGray} alt='icon' className='h-5 w-5'/>
+                      <span className='mx-3 text-gray-500 font-medium'>Notion</span>
+                    </>
+                  }
+                </button>
+
+
+                {/* <button onClick={() => clickHandler("text")} className='flex flex-row my-2 items-center'>
                 <img src={textGray} alt='icon' className='h-5 w-5'/>
                 <span className='mx-3 text-gray-500 font-medium'>Text</span>
                 </button>
+
                 <button onClick={() => clickHandler("website")} className='flex flex-row my-2 items-center'>
                 <img src={websiteGray} alt='icon' className='h-5 w-5'/>
                 <span className='mx-3 text-gray-500 font-medium'>Website</span>
                 </button>
+
                 <button onClick={() => clickHandler("qna")} className='flex flex-row my-2 items-center'>
                 <img src={qnaGray} alt='icon' className='h-6 w-6'/>
                 <span className='mx-3 text-gray-500 font-medium'>Q&A</span>
                 </button>
+
                 <button onClick={() => clickHandler("notion")} className='flex flex-row my-2 items-center'>
-                <img src={notionGray} alt='icon' className='h-8 w-8'/>
-                <span className='mx-3 text-gray-500 font-medium'>Notion</span>
-                </button>
+                <img src={notionGray} alt='icon' className='h-7 w-7'/>
+                <span className='mx-2 text-gray-500 font-medium'>Notion</span>
+                </button> */}
+
             </div>
             <div className='flex flex-col border border-gray-300 w-[50%] mt-14 mb-4'>
-                {/* <Files /> */}
+              {option.files ? <Files /> : null}
+              {option.text ? <Text /> : null}
+              {option.website ? <Website /> : null}
+              {option.qna ? <Qna /> : null}
+              {option.notion ? <Notion /> : null}
+              
+
+                {/* <Files />
                 <Text />
-                {/* <Website />
+                <Website />
                 <Qna />
                 <Notion /> */}
             </div>
