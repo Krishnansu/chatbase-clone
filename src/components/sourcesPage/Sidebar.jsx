@@ -6,7 +6,8 @@ import {Files,Text,Website,Qna,Notion} from "../sourcesPage";
 
 const Sidebar = () => {
 
-    // const [color, setColor] = useState(true);
+  const [display, setDisplay] = useState(true);
+  const [dbs, setdbs] = useState('');
 
     const [option, setOption] = useState({
         "files": false,
@@ -171,7 +172,7 @@ const Sidebar = () => {
               {option.text ? <Text /> : null}
               {option.website ? <Website /> : null}
               {option.qna ? <Qna /> : null}
-              {option.notion ? <Notion /> : null}
+              {option.notion ? <Notion display={display} setDisplay={setDisplay} dbs={dbs} setdbs={setdbs}/> : null}
               
 
                 {/* <Files />
