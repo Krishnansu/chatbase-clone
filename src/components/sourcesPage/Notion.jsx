@@ -33,7 +33,7 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
         {
           display ? 
           <div className='flex flex-row justify-center my-[10%]'>
-            <a href={`https://api.notion.com/v1/oauth/authorize?client_id=${oauth_client_id}&response_type=code&owner=user&redirect_uri=http%3A%2F%2Flocalhost%3A3000`}
+            <a href={`https://api.notion.com/v1/oauth/authorize?client_id=${oauth_client_id}&response_type=code&owner=user&redirect_uri=https%3A%2F%2Fchatbase-clone.netlify.app%2F`}
             className='flex flex-row items-center border border-gray-100 shadow-sm shadow-gray-200 hover:bg-gray-200 rounded-md pl-4 pr-2 font-medium'>
               <img src={notion} alt="logo" className='h-[60%] '/>
               <span>Connect Notion</span>
@@ -41,6 +41,7 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
           </div>
         :
           <div className='p-4 my-8 mx-4 flex flex-row justify-center'>
+          <h1 className='text-center border-b-[1px] border-gray-300 leading-[0.1em] mt-8 mx-6 mb-8'><span className="bg-white pb-[10px] px-2">Data Received</span></h1>
                 <p className='break-all'>{dbs}</p>
           </div>
         }
