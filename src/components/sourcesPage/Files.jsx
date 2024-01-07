@@ -36,7 +36,7 @@ const Files = () => {
       {files.map((file,index)=>(
         <>
           <div className='flex flex-row justify-between my-2 ml-6 mr-10'>
-            <p className=''>{file} <span className='text-sm text-gray-500'>(9,435 chars)</span></p>
+            <p className=''>{file} <span className='text-sm text-gray-500'>(3,107 chars)</span></p>
             <button><img src={trash} alt="trash" className='h-4 w-4' /></button>
           </div>
         </>

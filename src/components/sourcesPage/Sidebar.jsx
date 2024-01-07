@@ -185,14 +185,14 @@ const Sidebar = () => {
                 <h1 className='font-semibold text-lg flex flex-row justify-center'>Sources</h1>
                 <div>
                     <div className='my-4'>
-                        <p className='font-normal text-gray-500 '>1 File (9,301 chars)</p>
+                        <p className='font-normal text-gray-500 '>3 File (9,301 chars)</p>
                         <p className='font-normal text-gray-500 '>4 text input chars</p>
-                        <p className='font-normal text-gray-500 '>7 Links (4,549 detected chars)</p>
+                        <p className='font-normal text-gray-500 '>5 Links (4,549 detected chars)</p>
                         <p className='font-normal text-gray-500 '>1 Q&A (0 chars)</p>
                     </div>
                     
                     <p className="font-medium"><span>Total detected characters</span></p>
-                    <p className="flex flex-row justify-center"><span className='font-semibold text-gray-800'>4549</span><span className='font-normal text-gray-400'>/ 400,000 limit</span></p>
+                    <p className="flex flex-row justify-center"><span className='font-semibold text-gray-800'>13854</span><span className='font-normal text-gray-400'>/ 400,000 limit</span></p>
                 </div>
                 <button className='bg-black p-1 text-white font-medium text-base rounded-md w-full mt-4'>Train Chatbot</button>
             </div>
