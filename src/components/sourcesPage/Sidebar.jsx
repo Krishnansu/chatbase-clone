@@ -90,11 +90,11 @@ const Sidebar = () => {
                 <span className='mx-3 text-gray-500 font-medium'>Notion</span>
                 </button>
             </div>
-            <div className='flex flex-col border border-gray-300 w-[50%] mt-14'>
-                {/* <Files />
-                <Text /> */}
-                <Website />
-                {/* <Qna />
+            <div className='flex flex-col border border-gray-300 w-[50%] mt-14 mb-4'>
+                {/* <Files /> */}
+                <Text />
+                {/* <Website />
+                <Qna />
                 <Notion /> */}
             </div>
             <div className='flex flex-col justify-around border border-gray-300 mt-14 w-[20%] p-3 h-[80%]'>
