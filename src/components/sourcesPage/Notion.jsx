@@ -13,7 +13,7 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
     const code = params.get("code");
     // console.log(code);
     if (!code || !display) return;
-    fetch(`http://localhost:3002/login/${code}`).then(async (resp) => {
+    fetch(`https://chatbase-clone.onrender.com/login/${code}`).then(async (resp) => {
       const res=await resp.json();
       // console.log(res[0]);
       const ob=res[0];
