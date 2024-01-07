@@ -15,8 +15,8 @@ const Navbar = () => {
     </div>
 
     <div className="flex flex-row items-center">
-      <button  className='mx-3 font-medium text-sm text-gray-500'>Help</button>
-      <button  className='mx-3 font-medium text-sm text-gray-500'>Account →</button>
+      <button  className='mx-3 font-medium text-sm text-gray-500 hover:text-gray-700'>Help</button>
+      <button  className='mx-3 font-medium text-sm text-gray-500 hover:text-gray-700'>Account →</button>
     </div>
   </div>
 
