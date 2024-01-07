@@ -9,11 +9,11 @@ const Sidebar = () => {
     // const [color, setColor] = useState(true);
 
     const [option, setOption] = useState({
-        "files": true,
+        "files": false,
         "text": false,
         "website": false,
         "qna": false,
-        "notion": false
+        "notion": true
       });
       
       const clickHandler = (data) => {

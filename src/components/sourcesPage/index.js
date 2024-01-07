@@ -4,6 +4,7 @@ import Website from "./Website";
 import Qna from "./Qna";
 import Notion from "./Notion";
 import Sidebar from "./Sidebar";
+import NotionData from "./NotionData";
 
 export{
     Files,
@@ -11,5 +12,6 @@ export{
     Website,
     Qna,
     Notion,
-    Sidebar
+    Sidebar,
+    NotionData
 };

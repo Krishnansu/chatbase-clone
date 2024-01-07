@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Sources from './pages/Sources';
 import Navbar from './components/Navbar';
+import { NotionData } from "./components/sourcesPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/sources" element={<Sources />} />
       </Routes> */}
       <Sources />
+      {/* <NotionData /> */}
     </>
   );
 }
