@@ -1,7 +1,7 @@
 import React from 'react';
 import { notion } from '../../assets';
-import NotionData from './NotionData';
-import { useEffect, useState } from "react";
+// import NotionData from './NotionData';
+import { useEffect } from "react";
 
 const oauth_client_id = process.env.REACT_APP_NOTION_CLIENT_ID;
 

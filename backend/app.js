@@ -72,8 +72,8 @@ app.get('/NotionAPIGet', async(req, res) => {
         });
 
         res.send(response);
-        const {results} = response;
-        console.log("success");
+        // const {results} = response;
+        // console.log("success");
     } catch (error) {
         console.log(error);
     }

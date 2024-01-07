@@ -12,7 +12,7 @@ const notionClientSecret = process.env.REACT_APP_NOTION_CLIENT_SECRET;
 
 const redirectUri = 'http://localhost:3000';
 
-const encoded = Buffer.from(`${notionClientId}:${notionClientSecret}`).toString("base64");
+// const encoded = Buffer.from(`${notionClientId}:${notionClientSecret}`).toString("base64");
 
 app.use(cors());
 app.use(express.json());
