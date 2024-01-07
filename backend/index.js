@@ -10,7 +10,7 @@ const notionClientId = process.env.REACT_APP_NOTION_CLIENT_ID;
 const notionClientSecret = process.env.REACT_APP_NOTION_CLIENT_SECRET;
 
 
-const redirectUri = 'http://localhost:3000';
+const redirectUri = 'https://chatbase-clone.netlify.app/';
 
 // const encoded = Buffer.from(`${notionClientId}:${notionClientSecret}`).toString("base64");
 
