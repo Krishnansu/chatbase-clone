@@ -15,7 +15,9 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
     if (!code || !display) return;
     fetch(`https://chatbase-clone.onrender.com/login/${code}`).then(async (resp) => {
       const res=await resp.json();
-      // console.log(res[0]);
+      const x=res;
+      const temp=JSON.stringify(x);
+      console.log("TEMP:",temp);
       const ob=res[0];
       // console.log(ob);
       const str=JSON.stringify(ob);
