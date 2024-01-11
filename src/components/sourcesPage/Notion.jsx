@@ -17,12 +17,12 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
       const res=await resp.json();
       const x=res;
       const temp=JSON.stringify(x);
-      console.log("TEMP:",temp);
-      const ob=res[0];
+      // console.log("TEMP:",temp);
+      // const ob=res[0];
       // console.log(ob);
-      const str=JSON.stringify(ob);
+      // const str=JSON.stringify(ob);
       // console.log(str);
-      setdbs(str);
+      setdbs(temp);
       setDisplay(false);
       // console.log("FRONT",dbs);
     });
