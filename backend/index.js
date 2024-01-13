@@ -43,7 +43,7 @@ app.get("/login/:code", async (req, res) => {
       Authorization: `Bearer ${resp.data.access_token}`,
       "Notion-Version": "2022-02-22",
     },
-    data: { filter: { property: "object", value: "database" } },
+    //data: { filter: { property: "object", value: "database" } },
   });
 
   const str=JSON.stringify(data?.results);
