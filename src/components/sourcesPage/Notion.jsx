@@ -5,6 +5,8 @@ import { useEffect } from "react";
 
 const oauth_client_id = process.env.REACT_APP_NOTION_CLIENT_ID;
 
+const PrettyPrintJson = ({data}) => (<div><pre>{data}</pre></div>);
+
 const Notion = ({display,setDisplay,dbs,setdbs}) => {
   
 
@@ -45,7 +47,7 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
         :
           <div className='p-4 my-8 mx-4'>
           <h1 className='text-center border-b-[1px] border-gray-300 leading-[0.1em] mt-6 mx-6 mb-8'><span className="bg-white pb-[10px] px-2">Data Received</span></h1>
-                <p className='break-all p-2'>{dbs}</p>
+                <p className='break-all p-2'><PrettyPrintJson data={dbs} /></p>
           </div>
         }
         
