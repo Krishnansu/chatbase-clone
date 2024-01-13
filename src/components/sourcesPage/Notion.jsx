@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const oauth_client_id = process.env.REACT_APP_NOTION_CLIENT_ID;
 
-const PrettyPrintJson = ({data}) => (<div><pre>{data}</pre></div>);
+const PrettyPrintJson = ({data}) => (<div><pre className='text-balance'>{data}</pre></div>);
 
 const Notion = ({display,setDisplay,dbs,setdbs}) => {
   
@@ -20,7 +20,7 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
       const x=res;
       const temp=JSON.stringify(x,null,2);
       console.log("RES:",res);
-      console.log("TEMP:",temp);
+      //console.log("TEMP:",temp);
       // const ob=res[0];
       // console.log(ob);
       // const str=JSON.stringify(ob);
