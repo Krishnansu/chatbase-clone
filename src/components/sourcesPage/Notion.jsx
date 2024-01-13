@@ -16,7 +16,7 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
     fetch(`https://chatbase-clone.onrender.com/login/${code}`).then(async (resp) => {
       const res=await resp.json();
       const x=res;
-      const temp=JSON.stringify(x);
+      const temp=JSON.stringify(x,null,2);
       console.log("RES:",res);
       console.log("TEMP:",temp);
       // const ob=res[0];
@@ -45,7 +45,7 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
         :
           <div className='p-4 my-8 mx-4'>
           <h1 className='text-center border-b-[1px] border-gray-300 leading-[0.1em] mt-6 mx-6 mb-8'><span className="bg-white pb-[10px] px-2">Data Received</span></h1>
-                <p className='break-all p-2'>{JSON.parse(dbs)}</p>
+                <p className='break-all p-2'>{dbs}</p>
           </div>
         }
         
