@@ -45,7 +45,7 @@ const Notion = ({display,setDisplay,dbs,setdbs}) => {
         :
           <div className='p-4 my-8 mx-4'>
           <h1 className='text-center border-b-[1px] border-gray-300 leading-[0.1em] mt-6 mx-6 mb-8'><span className="bg-white pb-[10px] px-2">Data Received</span></h1>
-                <p className='break-all p-2'>{dbs}</p>
+                <p className='break-all p-2'>{JSON.parse(dbs)}</p>
           </div>
         }
         
