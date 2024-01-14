@@ -86,17 +86,17 @@ app.get("/login/:code", async (req, res) => {
 
   const datum=data.results;
   console.log(datum);
-  // for (let i = 0; i < datum.length(); i++) {
-  //   if(datum[i].object==="page")
-  //   {
-  //     console.log(i," -> ",datum[i].id);
+  for (let i = 0; i < datum.length; i++) {
+    if(datum[i].object==="page")
+    {
+      console.log(i," -> ",datum[i].id);
       // const child = getSubBlocks(datum[i].id,resp.data.access_token);
       // if(child !== undefined)
       // {
       //     datum[i].childArray=child;
       // }
-    // }
-  // }
+    }
+  }
   
   const str=JSON.stringify(datum);
   //const str=JSON.stringify(data?.results);
