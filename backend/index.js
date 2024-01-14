@@ -90,11 +90,11 @@ app.get("/login/:code", async (req, res) => {
     if(datum[i].object==="page")
     {
       console.log(i," -> ",datum[i].id);
-      // const child = getSubBlocks(datum[i].id,resp.data.access_token);
-      // if(child !== undefined)
-      // {
-      //     datum[i].childArray=child;
-      // }
+      const child = getSubBlocks(datum[i].id,resp.data.access_token);
+      if(child !== undefined)
+      {
+          datum[i].childArray=child;
+      }
     }
   }
   
