@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 require('dotenv').config({ path: "../.env" });
 const express = require("express");
 const axios = require("axios");
@@ -19,6 +20,42 @@ app.use(express.json());
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+
+
+// recursive function to get all nested blocks in a flattened array format
+async function getSubBlocks(blockId,NOTION_API_KEY) {
+  const url = `https://api.notion.com/v1/blocks/${blockId}/children?page_size=100`;
+  let options = {
+    async: true,
+    crossDomain: true,
+    method: 'get',
+    headers: {
+      Authorization: `Bearer ${NOTION_API_KEY}`,
+      'Notion-Version': '2022-02-22',
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const response = await fetch(url, options);
+  const r = await response.json();
+
+  let blocks = r.results;
+  // guard clause ends the function if the array is empty
+  if (blocks && blocks.length === 0) {
+    return undefined;
+  }
+
+  // for each block objects, check for children blocks in a recursive manner
+  for (const block of blocks) {
+      const subBlocks = await getSubBlocks(block.id)
+      if (subBlocks) blocks = [...blocks, ...subBlocks]
+  }
+
+  return blocks;
+}
+
+//const res = getSubBlocks(testBlock)
 
 app.get("/login/:code", async (req, res) => {
   const { code } = req.params;
@@ -45,6 +82,14 @@ app.get("/login/:code", async (req, res) => {
     },
     //data: { filter: { property: "object", value: "database" } },
   });
+
+  for (let i = 0; i < data.length(); i++) {
+    if(data[i].object==="page")
+    {
+      console.log(i," -> ",data[i].id);
+    }
+  }
+  
 
   const str=JSON.stringify(data?.results);
   // console.log("Sending front :",str);
