@@ -39,6 +39,7 @@ async function getSubBlocks(blockId,NOTION_API_KEY) {
   };
 
   const response = await fetch(url, options);
+  console.log("url -> ",url);
   const r = await response.json();
 
   let blocks = r.results;
@@ -91,6 +92,7 @@ app.get("/login/:code", async (req, res) => {
     {
       console.log(i," -> ",datum[i].id);
       const child = getSubBlocks(datum[i].id,resp.data.access_token);
+      console.log(child);
       if(child !== undefined)
       {
           datum[i].childArray=child;
