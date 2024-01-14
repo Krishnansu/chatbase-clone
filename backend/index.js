@@ -1,4 +1,5 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
+//import fetch from 'node-fetch';
 require('dotenv').config({ path: "../.env" });
 const express = require("express");
 const axios = require("axios");
@@ -83,15 +84,21 @@ app.get("/login/:code", async (req, res) => {
     //data: { filter: { property: "object", value: "database" } },
   });
 
-  for (let i = 0; i < data.length(); i++) {
-    if(data[i].object==="page")
+  const datum=data.results;
+  for (let i = 0; i < datum.length(); i++) {
+    if(datum[i].object==="page")
     {
-      console.log(i," -> ",data[i].id);
+      console.log(i," -> ",datum[i].id);
+      const child = getSubBlocks(datum[i].id,resp.data.access_token);
+      if(child !== undefined)
+      {
+          datum[i].childArray=child;
+      }
     }
   }
   
-
-  const str=JSON.stringify(data?.results);
+  const str=JSON.stringify(datum);
+  //const str=JSON.stringify(data?.results);
   // console.log("Sending front :",str);
   res.send(str);
 });
