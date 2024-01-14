@@ -25,7 +25,39 @@ app.listen(port, () => {
 
 
 // recursive function to get all nested blocks in a flattened array format
-async function getSubBlocks(blockId,NOTION_API_KEY) {
+// async function getSubBlocks(blockId,NOTION_API_KEY) {
+//   const url = `https://api.notion.com/v1/blocks/${blockId}/children?page_size=100`;
+//   let options = {
+//     async: true,
+//     crossDomain: true,
+//     method: 'get',
+//     headers: {
+//       Authorization: `Bearer ${NOTION_API_KEY}`,
+//       'Notion-Version': '2022-02-22',
+//       'Content-Type': 'application/json',
+//     },
+//   };
+
+//   const response = await fetch(url, options);
+//   console.log("url -> ",url);
+//   const r = await response.json();
+
+//   let blocks = r.results;
+//   // guard clause ends the function if the array is empty
+//   if (blocks && blocks.length === 0) {
+//     return undefined;
+//   }
+
+//   // for each block objects, check for children blocks in a recursive manner
+//   for (const block of blocks) {
+//       const subBlocks = await getSubBlocks(block.id,NOTION_API_KEY)
+//       if (subBlocks) blocks = [...blocks, ...subBlocks]
+//   }
+
+//   return blocks;
+// }
+
+async function getSubBlocks(blockId, NOTION_API_KEY) {
   const url = `https://api.notion.com/v1/blocks/${blockId}/children?page_size=100`;
   let options = {
     async: true,
@@ -48,14 +80,18 @@ async function getSubBlocks(blockId,NOTION_API_KEY) {
     return undefined;
   }
 
-  // for each block objects, check for children blocks in a recursive manner
-  for (const block of blocks) {
-      const subBlocks = await getSubBlocks(block.id,NOTION_API_KEY)
-      if (subBlocks) blocks = [...blocks, ...subBlocks]
-  }
+  // Use Promise.all to wait for all recursive calls to resolve
+  const subBlocksPromises = blocks.map(async (block) => {
+    return getSubBlocks(block.id, NOTION_API_KEY);
+  });
 
-  return blocks;
+  const subBlocks = await Promise.all(subBlocksPromises);
+
+  // Flatten the array of arrays
+  return blocks.concat(...subBlocks);
 }
+
+
 
 //const res = getSubBlocks(testBlock)
 
