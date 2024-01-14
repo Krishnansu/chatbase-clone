@@ -49,7 +49,7 @@ async function getSubBlocks(blockId,NOTION_API_KEY) {
 
   // for each block objects, check for children blocks in a recursive manner
   for (const block of blocks) {
-      const subBlocks = await getSubBlocks(block.id)
+      const subBlocks = await getSubBlocks(block.id,NOTION_API_KEY)
       if (subBlocks) blocks = [...blocks, ...subBlocks]
   }
 
@@ -89,11 +89,11 @@ app.get("/login/:code", async (req, res) => {
     if(datum[i].object==="page")
     {
       console.log(i," -> ",datum[i].id);
-      const child = getSubBlocks(datum[i].id,resp.data.access_token);
-      if(child !== undefined)
-      {
-          datum[i].childArray=child;
-      }
+      // const child = getSubBlocks(datum[i].id,resp.data.access_token);
+      // if(child !== undefined)
+      // {
+      //     datum[i].childArray=child;
+      // }
     }
   }
   
