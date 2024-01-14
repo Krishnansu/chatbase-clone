@@ -80,16 +80,17 @@ async function getSubBlocks(blockId, NOTION_API_KEY) {
     return undefined;
   }
 
-  // Use Promise.all to wait for all recursive calls to resolve
-  const subBlocksPromises = blocks.map(async (block) => {
-    return getSubBlocks(block.id, NOTION_API_KEY);
-  });
-
-  const subBlocks = await Promise.all(subBlocksPromises);
+  // Use a for...of loop to await recursive calls sequentially
+  const subBlocks = [];
+  for (const block of blocks) {
+    const subBlock = await getSubBlocks(block.id, NOTION_API_KEY);
+    subBlocks.push(...subBlock);
+  }
 
   // Flatten the array of arrays
   return blocks.concat(...subBlocks);
 }
+
 
 
 
